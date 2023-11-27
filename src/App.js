@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ComicForm from "./Components/Forms/ComicForm";
+import ComicFinalPage from "./Components/FinalPages/ComicFinalPage";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Navbar from "./Components/Home/Navbar";
 
 function App() {
+  const appStyle = {
+    backgroundImage: 'url("/ComicBackground.jpg")',
+    backgroundSize: "cover",
+    minHeight: "100vh",
+    padding: "20px",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar></Navbar>
+      <div style={appStyle}>
+        <Routes>
+          <Route path="/" element={<ComicForm />} />
+          <Route path="/final" element={<ComicFinalPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
