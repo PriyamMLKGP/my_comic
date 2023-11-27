@@ -1,7 +1,7 @@
 import "./App.css";
 import ComicForm from "./Components/Forms/ComicForm";
 import ComicFinalPage from "./Components/FinalPages/ComicFinalPage";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Home/Navbar";
 
 function App() {
